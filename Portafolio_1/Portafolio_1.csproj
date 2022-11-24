@@ -171,6 +171,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AspNetUsersController.cs" />
     <Compile Include="Controllers\ExperienciaController.cs" />
     <Compile Include="Controllers\HabilidadController.cs" />
@@ -429,6 +430,7 @@
     <Content Include="Views\Tipo\Edit.cshtml" />
     <Content Include="Views\Tipo\Index.cshtml" />
     <Content Include="Views\Portafolio\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
