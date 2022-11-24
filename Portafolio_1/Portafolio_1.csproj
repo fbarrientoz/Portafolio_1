@@ -172,14 +172,16 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\AspNetUsersController.cs" />
+    <Compile Include="Controllers\DatoController.cs" />
     <Compile Include="Controllers\ExperienciaController.cs" />
     <Compile Include="Controllers\HabilidadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PortafolioController.cs" />
+    <Compile Include="Controllers\ServicioController.cs" />
     <Compile Include="Controllers\TestimoniosController.cs" />
     <Compile Include="Controllers\TipoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -194,6 +196,9 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Dato.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Experiencia.cs">
@@ -218,6 +223,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Servicio.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Testimonio.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -409,11 +417,18 @@
     <Content Include="Views\Testimonios\Details.cshtml" />
     <Content Include="Views\Testimonios\Edit.cshtml" />
     <Content Include="Views\Testimonios\Index.cshtml" />
-    <Content Include="Views\AspNetUsers\Create.cshtml" />
-    <Content Include="Views\AspNetUsers\Delete.cshtml" />
-    <Content Include="Views\AspNetUsers\Details.cshtml" />
-    <Content Include="Views\AspNetUsers\Edit.cshtml" />
-    <Content Include="Views\AspNetUsers\Index.cshtml" />
+    <Content Include="Views\Tipo\Create.cshtml" />
+    <Content Include="Views\Tipo\Delete.cshtml" />
+    <Content Include="Views\Tipo\Details.cshtml" />
+    <Content Include="Views\Tipo\Edit.cshtml" />
+    <Content Include="Views\Tipo\Index.cshtml" />
+    <Content Include="Views\Portafolio\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Delete.cshtml" />
+    <Content Include="Views\Usuario\Details.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Experiencia\Create.cshtml" />
     <Content Include="Views\Experiencia\Delete.cshtml" />
     <Content Include="Views\Experiencia\Details.cshtml" />
@@ -424,13 +439,16 @@
     <Content Include="Views\Habilidad\Details.cshtml" />
     <Content Include="Views\Habilidad\Edit.cshtml" />
     <Content Include="Views\Habilidad\Index.cshtml" />
-    <Content Include="Views\Tipo\Create.cshtml" />
-    <Content Include="Views\Tipo\Delete.cshtml" />
-    <Content Include="Views\Tipo\Details.cshtml" />
-    <Content Include="Views\Tipo\Edit.cshtml" />
-    <Content Include="Views\Tipo\Index.cshtml" />
-    <Content Include="Views\Portafolio\Index.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Servicio\Create.cshtml" />
+    <Content Include="Views\Servicio\Delete.cshtml" />
+    <Content Include="Views\Servicio\Details.cshtml" />
+    <Content Include="Views\Servicio\Edit.cshtml" />
+    <Content Include="Views\Servicio\Index.cshtml" />
+    <Content Include="Views\Dato\Create.cshtml" />
+    <Content Include="Views\Dato\Delete.cshtml" />
+    <Content Include="Views\Dato\Details.cshtml" />
+    <Content Include="Views\Dato\Edit.cshtml" />
+    <Content Include="Views\Dato\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

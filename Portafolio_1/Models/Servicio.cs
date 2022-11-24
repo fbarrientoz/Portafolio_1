@@ -12,13 +12,13 @@ namespace Portafolio_1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Habilidad
+    public partial class Servicio
     {
-        public string id { get; set; }
-        public string UsuarioId { get; set; }
-        public string Nombre { get; set; }
+        public string Id { get; set; }
+        public string UsuarioID { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<int> Porcentaje { get; set; }
+        public string Servicio1 { get; set; }
+        public string Descripcion_Servicio { get; set; }
     
         public virtual AspNetUser AspNetUser { get; set; }
     }

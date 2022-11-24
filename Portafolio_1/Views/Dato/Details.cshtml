@@ -1,4 +1,4 @@
-﻿@model Portafolio_1.Models.Habilidad
+﻿@model Portafolio_1.Models.Dato
 
 @{
     ViewBag.Title = "Details";
@@ -7,31 +7,31 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Habilidad</h4>
+    <h4>Dato</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
+            @Html.DisplayNameFor(model => model.Clientes)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Nombre)
+            @Html.DisplayFor(model => model.Clientes)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
+            @Html.DisplayNameFor(model => model.Texto)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Descripcion)
+            @Html.DisplayFor(model => model.Texto)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Porcentaje)
+            @Html.DisplayNameFor(model => model.Descripcion_Hecho)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Porcentaje)
+            @Html.DisplayFor(model => model.Descripcion_Hecho)
         </dd>
 
         <dt>
@@ -45,6 +45,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

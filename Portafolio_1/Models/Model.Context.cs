@@ -33,5 +33,7 @@ namespace Portafolio_1.Models
         public virtual DbSet<Habilidad> Habilidads { get; set; }
         public virtual DbSet<Testimonio> Testimonios { get; set; }
         public virtual DbSet<Tipo> Tipoes { get; set; }
+        public virtual DbSet<Dato> Datos { get; set; }
+        public virtual DbSet<Servicio> Servicios { get; set; }
     }
 }

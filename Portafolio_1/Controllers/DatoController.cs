@@ -10,112 +10,112 @@ using Portafolio_1.Models;
 
 namespace Portafolio_1.Controllers
 {
-    public class HabilidadController : Controller
+    public class DatoController : Controller
     {
         private portafolioEntities1 db = new portafolioEntities1();
 
-        // GET: Habilidad
+        // GET: Dato
         public ActionResult Index()
         {
-            var habilidads = db.Habilidads.Include(h => h.AspNetUser);
-            return View(habilidads.ToList());
+            var datos = db.Datos.Include(d => d.AspNetUser);
+            return View(datos.ToList());
         }
 
-        // GET: Habilidad/Details/5
+        // GET: Dato/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Habilidad habilidad = db.Habilidads.Find(id);
-            if (habilidad == null)
+            Dato dato = db.Datos.Find(id);
+            if (dato == null)
             {
                 return HttpNotFound();
             }
-            return View(habilidad);
+            return View(dato);
         }
 
-        // GET: Habilidad/Create
+        // GET: Dato/Create
         public ActionResult Create()
         {
             ViewBag.UsuarioId = new SelectList(db.AspNetUsers, "Id", "Email");
             return View();
         }
 
-        // POST: Habilidad/Create
+        // POST: Dato/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,UsuarioId,Nombre,Descripcion,Porcentaje")] Habilidad habilidad)
+        public ActionResult Create([Bind(Include = "Id,Clientes,Texto,UsuarioId,Descripcion_Hecho")] Dato dato)
         {
             if (ModelState.IsValid)
             {
-                db.Habilidads.Add(habilidad);
+                db.Datos.Add(dato);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.UsuarioId = new SelectList(db.AspNetUsers, "Id", "Email", habilidad.UsuarioId);
-            return View(habilidad);
+            ViewBag.UsuarioId = new SelectList(db.AspNetUsers, "Id", "Email", dato.UsuarioId);
+            return View(dato);
         }
 
-        // GET: Habilidad/Edit/5
+        // GET: Dato/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Habilidad habilidad = db.Habilidads.Find(id);
-            if (habilidad == null)
+            Dato dato = db.Datos.Find(id);
+            if (dato == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.UsuarioId = new SelectList(db.AspNetUsers, "Id", "Email", habilidad.UsuarioId);
-            return View(habilidad);
+            ViewBag.UsuarioId = new SelectList(db.AspNetUsers, "Id", "Email", dato.UsuarioId);
+            return View(dato);
         }
 
-        // POST: Habilidad/Edit/5
+        // POST: Dato/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,UsuarioId,Nombre,Descripcion,Porcentaje")] Habilidad habilidad)
+        public ActionResult Edit([Bind(Include = "Id,Clientes,Texto,UsuarioId,Descripcion_Hecho")] Dato dato)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(habilidad).State = EntityState.Modified;
+                db.Entry(dato).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UsuarioId = new SelectList(db.AspNetUsers, "Id", "Email", habilidad.UsuarioId);
-            return View(habilidad);
+            ViewBag.UsuarioId = new SelectList(db.AspNetUsers, "Id", "Email", dato.UsuarioId);
+            return View(dato);
         }
 
-        // GET: Habilidad/Delete/5
+        // GET: Dato/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Habilidad habilidad = db.Habilidads.Find(id);
-            if (habilidad == null)
+            Dato dato = db.Datos.Find(id);
+            if (dato == null)
             {
                 return HttpNotFound();
             }
-            return View(habilidad);
+            return View(dato);
         }
 
-        // POST: Habilidad/Delete/5
+        // POST: Dato/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Habilidad habilidad = db.Habilidads.Find(id);
-            db.Habilidads.Remove(habilidad);
+            Dato dato = db.Datos.Find(id);
+            db.Datos.Remove(dato);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

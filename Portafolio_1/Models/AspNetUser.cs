@@ -23,6 +23,8 @@ namespace Portafolio_1.Models
             this.Habilidads = new HashSet<Habilidad>();
             this.Testimonios = new HashSet<Testimonio>();
             this.AspNetRoles = new HashSet<AspNetRole>();
+            this.Datos = new HashSet<Dato>();
+            this.Servicios = new HashSet<Servicio>();
         }
     
         public string Id { get; set; }
@@ -46,6 +48,13 @@ namespace Portafolio_1.Models
         public string Youtube { get; set; }
         public string Instagram { get; set; }
         public string Photo { get; set; }
+        public string Birthday { get; set; }
+        public string Edad { get; set; }
+        public string Website { get; set; }
+        public string Degree { get; set; }
+        public string Aboutinfo { get; set; }
+        public string Experiencia_Principal { get; set; }
+        public string Text_Experiencia_principal { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
@@ -59,5 +68,9 @@ namespace Portafolio_1.Models
         public virtual ICollection<Testimonio> Testimonios { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Dato> Datos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Servicio> Servicios { get; set; }
     }
 }

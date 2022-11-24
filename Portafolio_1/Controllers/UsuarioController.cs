@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -11,17 +10,17 @@ using Portafolio_1.Models;
 
 namespace Portafolio_1.Controllers
 {
-    public class AspNetUsersController : Controller
+    public class UsuarioController : Controller
     {
         private portafolioEntities1 db = new portafolioEntities1();
 
-        // GET: AspNetUsers
+        // GET: Usuario
         public ActionResult Index()
         {
             return View(db.AspNetUsers.ToList());
         }
 
-        // GET: AspNetUsers/Details/5
+        // GET: Usuario/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -36,18 +35,18 @@ namespace Portafolio_1.Controllers
             return View(aspNetUser);
         }
 
-        // GET: AspNetUsers/Create
+        // GET: Usuario/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AspNetUsers/Create
+        // POST: Usuario/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName,Direccion,Ciudad,Pais,Telefono,Facebook,Twitter,Youtube,Instagram")] AspNetUser aspNetUser)
+        public ActionResult Create([Bind(Include = "Id,Email,EmailConfirmed,PasswordHash,SecurityStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEndDateUtc,LockoutEnabled,AccessFailedCount,UserName,Direccion,Ciudad,Pais,Telefono,Facebook,Twitter,Youtube,Instagram,Photo")] AspNetUser aspNetUser)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +58,7 @@ namespace Portafolio_1.Controllers
             return View(aspNetUser);
         }
 
-        // GET: AspNetUsers/Edit/5
+        // GET: Usuario/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -74,7 +73,7 @@ namespace Portafolio_1.Controllers
             return View(aspNetUser);
         }
 
-        // POST: AspNetUsers/Edit/5
+        // POST: Usuario/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -83,7 +82,6 @@ namespace Portafolio_1.Controllers
         {
             if (ModelState.IsValid)
             {
-               
                 db.Entry(aspNetUser).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -91,7 +89,7 @@ namespace Portafolio_1.Controllers
             return View(aspNetUser);
         }
 
-        // GET: AspNetUsers/Delete/5
+        // GET: Usuario/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -106,7 +104,7 @@ namespace Portafolio_1.Controllers
             return View(aspNetUser);
         }
 
-        // POST: AspNetUsers/Delete/5
+        // POST: Usuario/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
